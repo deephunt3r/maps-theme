@@ -13,16 +13,47 @@ function errorLocation(position){
     setupMap([135.433056, 34.664722])
 }
 function setupMap(center){
-    // var map = new mapboxgl.Map({
-    //     container: 'map',
-    //     style: 'mapbox://styles/mapbox/outdoors-v11',
-    //     center:center, //center is latitude longitude array
-    //     zoom: 13,//setting up default zoom level
-    // })
     
-    map.on("load",function() {
+    
+    map.on('load',function() {
 
-        map.setPaintProperty('water','fill-color','#a83252')
+      map.setPaintProperty('water','fill-color','#021019')
+      map.setPaintProperty('land','background-color','#08304b')
+      map.setPaintProperty('road-motorway-trunk','line-color','#000000')
+      map.setPaintProperty('road-major-link','line-color','#000000')
+      map.setPaintProperty('bridge-motorway-trunk','line-color','#000000')
+      map.setPaintProperty('bridge-major-link','line-color','#000000')
+      map.setPaintProperty('bridge-major-link-2','line-color','#000000')
+      map.setPaintProperty('bridge-motorway-trunk-2','line-color','#000000')
+      map.setPaintProperty('tunnel-motorway-trunk','line-color','#000000')
+      map.setPaintProperty('road-secondary-tertiary','line-color','#000000')
+      map.setPaintProperty('road-primary','line-color','#000000')
+      map.setPaintProperty('road-street','line-color','#000000')
+      map.setPaintProperty('road-minor','line-color','#000000')
+      map.setPaintProperty('aerialway','line-color','#146474')
+      map.setPaintProperty('bridge-rail-tracks','line-color','#146474')
+      map.setPaintProperty('bridge-rail','line-color','#146474')
+      map.setPaintProperty('road-rail-tracks','line-color','#146474')
+      map.setPaintProperty('road-rail','line-color','#146474')
+      map.setPaintProperty('ferry-auto','line-color','#146474')
+      map.setPaintProperty('ferry','line-color','#146474')
+      map.setPaintProperty('aeroway-line','line-color','#146474')
+      map.setPaintProperty('landuse','fill-color','#08304b')
+      map.setPaintProperty('national-park','fill-color','#1e6c85')
+      map.setPaintProperty('road-path','line-color','#000000')
+      map.setPaintProperty('building','fill-color','#08304b')
+
+      map.setPaintProperty('road-motorway-trunk-case','line-color','#09ffc3')
+      map.setPaintProperty('road-major-link-case','line-color','#09ffc3')
+      map.setPaintProperty('bridge-major-link-case','line-color','#09ffc3')
+      map.setPaintProperty('bridge-major-link-2-case','line-color','#09ffc3')
+      map.setPaintProperty('bridge-motorway-trunk-case','line-color','#09ffc3')
+      map.setPaintProperty('bridge-motorway-trunk-2-case','line-color','#09ffc3')
+      map.setPaintProperty('tunnel-motorway-trunk-case','line-color','#09ffc3')
+      map.setPaintProperty('road-secondary-tertiary-case','line-color','#ff09d8')
+      map.setPaintProperty('road-primary-case','line-color','#000000')
+      map.setPaintProperty('road-street-case','line-color','#000000')
+      map.setPaintProperty('road-minor-case','line-color','#000000')
     });
     
     const nav = new mapboxgl.NavigationControl();//zoom and navigation control
@@ -43,7 +74,7 @@ function setupMap(center){
             type: 'Feature',
             geometry: {
               type: 'Point',
-              coordinates: [135.433056, 34.664722]
+              coordinates: [83.3430332379697,17.820352819819014]
             },
             properties: {
               title: 'Mapbox',

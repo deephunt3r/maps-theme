@@ -49,29 +49,21 @@
 
     <div id="menu">
 
-        <input id="neon" type="radio" name="rtoggle" value="neon" checked="checked">
+        <input id="neon" type="radio" name="rtoggle" value="neon" >
         <label for="neon">neon</label>
 
-        <input id="satellite-v9" type="radio" name="rtoggle" value="satellite" >
-        <label for="satellite-v9">satellite</label>
+        <!-- <input id="simple" type="radio" name="rtoggle" value="simple" >
+        <label for="simple">satellite</label> -->
     
         <input id="dark-v10" type="radio" name="rtoggle" value="dark">
         <label for="dark-v10">dark</label>
-<!-- 
-        <input id="streets-v11" type="radio" name="rtoggle" value="streets">
-        <label for="streets-v11">streets</label> -->
+
+        <input id="spider" type="radio" name="rtoggle" value="spider">
+        <label for="spider">spiderman</label>
         
-        <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors">
-        <label for="outdoors-v11">outdoors</label>
+        <input id="Simpsons" type="radio" name="rtoggle" value="Simpsons">
+        <label for="Simpsons">Simpsons</label>
         </div>
-
-
-
-
-
-
-
-
 
 
     <script>
@@ -82,9 +74,6 @@
         style: "mapbox://styles/mapbox/streets-v11",
         center: [-79.4512, 43.6568],
         zoom: 13,
-      });
-      map.on("load", function () {
-        map.setPaintProperty("water", "fill-color", "#a83252");
       });
 
       var search =  new MapboxGeocoder({accessToken: mapboxgl.accessToken,mapboxgl: mapboxgl,
@@ -99,9 +88,33 @@
       const inputs = layerList.getElementsByTagName('input');
         
         for (const input of inputs) {
+          if(input.id=='Simpsons'){
             input.onclick = (layer) => {
+            
+            map.setStyle('mapbox://styles/random116/cla231nns002f14paxnzn1h33');
+            };
+        }
+        else if(input.id=='neon'){
+            input.onclick = (layer) => {
+           
+            map.setStyle('mapbox://styles/random116/cla2ipzru006e14nu4ym05cjb');
+            this.map.setTerrain();
+            };
+        }
+        else if(input.id=='spider'){
+            input.onclick = (layer) => {
+           
+            map.setStyle('mapbox://styles/random116/cla25fz75004u15sevxj6me3k');
+            };
+        }
+
+          else{
+            input.onclick = (layer) => {
+            
             const layerId = layer.target.id;
             map.setStyle('mapbox://styles/mapbox/' + layerId);
+          }
+            
         };
     }
 
